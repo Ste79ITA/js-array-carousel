@@ -52,3 +52,11 @@ i {
   bottom: 5%;
   left: 50%;
 }
+
+.hide {
+  display: none;
+}
+
+.display {
+  display: block;
+}
