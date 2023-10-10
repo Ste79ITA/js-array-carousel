@@ -3,3 +3,52 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.carousel {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+i {
+  transform: translateY(20%);
+}
+
+.backward {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+}
+.forward {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+}
