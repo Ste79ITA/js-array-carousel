@@ -17,12 +17,43 @@ let imgDisplay = 0;
 
 for (let i = 0; i < imageArray.length; i++) {
   if (i === imgDisplay) {
-    carouselDOMElement.innerHTML += `<img class=${'display'} src=${
-      imageArray[i]
-    } >`;
+    carouselDOMElement.innerHTML += `<img class='image display' src=${imageArray[i]} >`;
   } else {
-    carouselDOMElement.innerHTML += `<img class=${'hide'} src=${
-      imageArray[i]
-    } >`;
+    carouselDOMElement.innerHTML += `<img class='image' src=${imageArray[i]} >`;
   }
 }
+// utilizzare un array contente le immagini pubblicate per gestire i pulsanti
+const imageDOMElements = Array.from(document.querySelectorAll('.image'));
+console.log(imageDOMElements);
+
+// Pulsante infinito per ciclare le immagini in avanti
+forwardBtnDOMElement.addEventListener('click', function () {
+  let currentImage = imageDOMElements.findIndex(
+    (img) => img.className === 'image display'
+  );
+
+  if (currentImage < 4) {
+    imageDOMElements[currentImage].classList.remove('display');
+    imageDOMElements[currentImage + 1].classList.add('display');
+  } else {
+    imageDOMElements[currentImage].classList.remove('display');
+    imageDOMElements[(currentImage = 0)].classList.add('display');
+  }
+});
+
+// Pulsante infinito per ciclare le immagini indietro
+backwardBtnDOMElement.addEventListener('click', function () {
+  let currentImage = imageDOMElements.findIndex(
+    (img) => img.className === 'image display'
+  );
+
+  if (currentImage > 0) {
+    imageDOMElements[currentImage].classList.remove('display');
+    imageDOMElements[currentImage - 1].classList.add('display');
+  } else {
+    imageDOMElements[currentImage].classList.remove('display');
+    imageDOMElements[
+      (currentImage = imageDOMElements.length - 1)
+    ].classList.add('display');
+  }
+});
