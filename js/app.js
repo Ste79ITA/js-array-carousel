@@ -1,7 +1,8 @@
 // DOM SElectors
-const carouselDOMElement = document.querySelector('.carousel');
+const carouselDOMElement = document.querySelector('.images');
 const forwardBtnDOMElement = document.querySelector('.forward');
 const backwardBtnDOMElement = document.querySelector('.backward');
+const thumbnailsDOMElement = document.querySelector('.thumbnails');
 
 // Inserire immagini carosello in un array
 const imageArray = [
@@ -16,7 +17,7 @@ const imageArray = [
 let imgDisplay = 0;
 
 for (let i = 0; i < imageArray.length; i++) {
-  if (i === imgDisplay) {
+  if (imgDisplay === i) {
     carouselDOMElement.innerHTML += `<img class='image display' src=${imageArray[i]} >`;
   } else {
     carouselDOMElement.innerHTML += `<img class='image' src=${imageArray[i]} >`;
@@ -24,7 +25,6 @@ for (let i = 0; i < imageArray.length; i++) {
 }
 // utilizzare un array contente le immagini pubblicate per gestire i pulsanti
 const imageDOMElements = Array.from(document.querySelectorAll('.image'));
-console.log(imageDOMElements);
 
 // Pulsante infinito per ciclare le immagini in avanti
 forwardBtnDOMElement.addEventListener('click', function () {
@@ -57,3 +57,5 @@ backwardBtnDOMElement.addEventListener('click', function () {
     ].classList.add('display');
   }
 });
+
+// preview immagini

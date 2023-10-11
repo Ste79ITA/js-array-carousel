@@ -10,15 +10,24 @@ img {
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 5px;
   height: 100vh;
 }
 
 .carousel {
+  display: flex;
   position: relative;
   width: 600px;
   margin: 0 auto;
+}
+
+.thumbnails {
+  display: block;
+  width: 300px;
+  /* height: 100px; */
+  /* background-color: red; */
+  /* margin-left: -100px; */
 }
 
 .btn {
@@ -49,10 +58,20 @@ i {
   left: 50%;
 }
 
-.image {
+.carousel .image {
   display: none;
 }
 
-.display {
+.carousel .display {
   display: block;
+}
+
+.thumbnails .thumb {
+  display: block;
+  filter: brightness(30%);
+}
+
+.thumbnails .display {
+  border: 3px solid #ed4ab9;
+  filter: brightness(100%);
 }
